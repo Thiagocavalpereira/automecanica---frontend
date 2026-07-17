@@ -1,19 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #121214;
-    color: #e1e1e6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Estilos específicos do painel administrativo (Ordens de Serviço e Funcionários).
+   As variáveis, cards-base, botões, badges e modais vêm de theme.css */
 
 .navbar-admin {
-    background-color: #202024;
-    border-bottom: 1px solid #29292e;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
     padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
 }
 
 .nav-container {
@@ -22,21 +17,51 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 .logo {
     font-size: 20px;
     font-weight: 800;
     color: #ffffff;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
 }
 
 .badge-admin {
-    color: #e18824;
+    color: var(--admin);
     margin-left: 4px;
     font-size: 14px;
-    border: 1px solid #e18824;
+    border: 1px solid var(--admin);
     padding: 2px 6px;
     border-radius: 4px;
+}
+
+.nav-links-admin {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.nav-links-admin .nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.nav-links-admin .nav-link:hover {
+    color: var(--text);
+    background-color: var(--surface-hover);
+}
+
+.nav-links-admin .nav-link.active {
+    color: var(--admin);
+    background-color: var(--admin-soft);
 }
 
 .nav-user {
@@ -54,43 +79,55 @@ body {
 .user-info span {
     font-weight: 600;
     color: #ffffff;
+    font-size: 14px;
 }
 
 .user-info small {
-    color: #8d8d99;
+    color: var(--text-muted);
     font-size: 12px;
 }
 
 .btn-sair {
     background: transparent;
-    border: 1px solid #f75a68;
-    color: #f75a68;
+    border: 1px solid var(--danger);
+    color: var(--danger);
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: all var(--transition);
 }
 
 .btn-sair:hover {
-    background-color: #f75a68;
+    background-color: var(--danger);
     color: #ffffff;
 }
 
 .main-container {
     max-width: 1400px;
     margin: 40px auto;
-    padding: 0 24px;
+    padding: 0 24px 60px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .page-header h2 {
     font-size: 26px;
     color: #ffffff;
     margin-bottom: 6px;
+    letter-spacing: -0.4px;
 }
 
 .page-header p {
-    color: #8d8d99;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -99,15 +136,11 @@ body {
 }
 
 .table-card {
-    background-color: #202024;
-    border: 1px solid #29292e;
-    border-radius: 8px;
     padding: 24px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .table-card h3 {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 20px;
     color: #ffffff;
 }
@@ -119,201 +152,153 @@ body {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     text-align: left;
 }
 
 th {
-    background-color: #121214;
-    color: #8d8d99;
+    background-color: var(--bg-soft);
+    color: var(--text-muted);
     padding: 14px 16px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid var(--border);
 }
+
+th:first-child { border-top-left-radius: var(--radius-sm); }
+th:last-child { border-top-right-radius: var(--radius-sm); }
 
 td {
     padding: 16px;
-    border-bottom: 1px solid #29292e;
-    color: #c4c4cc;
-    font-size: 15px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
 }
 
-tr:hover td {
-    background-color: #29292e;
+tbody tr {
+    transition: background-color var(--transition);
+}
+
+tbody tr:hover td {
+    background-color: var(--surface-hover);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .table-loading {
     text-align: center;
-    color: #8d8d99;
-    padding: 40px 0;
+    color: var(--text-muted);
+    padding: 50px 0;
     font-style: italic;
 }
 
-.status {
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.status.analise { background-color: rgba(225, 136, 36, 0.15); color: #e18824; }
-.status.reparo { background-color: rgba(0, 179, 126, 0.15); color: #00b37e; }
-.status.finalizado { background-color: rgba(72, 143, 243, 0.15); color: #488ff3; }
-
-.btn-action {
-    background-color: #121214;
-    border: 1px solid #29292e;
-    color: #e1e1e6;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
+.placa-mono {
+    font-family: 'Courier New', monospace;
     font-size: 13px;
-    transition: all 0.2s;
+    letter-spacing: 1px;
+    color: var(--text-muted);
 }
 
-.btn-action:hover {
-    border-color: #e18824;
-    color: #e18824;
+.funcionario-atribuido {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.funcionario-atribuido.atribuido {
+    color: var(--text);
+    font-weight: 600;
+    font-style: normal;
 }
 
 .btn-primary-admin {
-    background-color: #e18824;
+    background-color: var(--admin);
     color: #ffffff;
     border: none;
     padding: 12px 20px;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background var(--transition);
+    white-space: nowrap;
 }
 .btn-primary-admin:hover {
-    background-color: #c77218;
+    background-color: var(--admin-hover);
 }
 
-.modal{
-    display:none;
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.7);
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
+/* Cards de funcionários (página funcionarios.html) */
+.grid-funcionarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-.modal-content{
-
-    background:#202024;
-
-    width:400px;
-
-    padding:25px;
-
-    border-radius:10px;
-
-    border:1px solid #29292e;
-
+.funcionario-card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.modal-content h3{
-
-    margin-bottom:20px;
-
+.funcionario-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
 }
 
-.modal-content select{
-
-    width:100%;
-
-    padding:12px;
-
-    background:#121214;
-
-    color:white;
-
-    border:1px solid #444;
-
-    border-radius:5px;
-
+.funcionario-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--admin-soft);
+    color: var(--admin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
 }
 
-.modal-buttons{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    gap:10px;
-
-    margin-top:20px;
-
+.funcionario-nome-bloco {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
 }
 
-/* ============================================
-   MOBILE FIRST — este é o padrão que já existe
-      (funciona em qualquer tamanho de tela)
-         ============================================ */
+.funcionario-nome-bloco h4 {
+    font-size: 16px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-         /* TABLET — telas a partir de 768px (iPads, tablets) */
-         @media (min-width: 768px) {
-             .auth-card {
-                     max-width: 480px;
-                             padding: 48px;
-                                 }
+.funcionario-email {
+    font-size: 13px;
+    color: var(--text-muted);
+    word-break: break-all;
+}
 
-                                     .auth-header h2 {
-                                             font-size: 32px;
-                                                 }
-                                                 }
+.funcionario-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4px;
+}
 
-                                                 /* NOTEBOOK/DESKTOP PEQUENO — a partir de 1024px */
-                                                 @media (min-width: 1024px) {
-                                                     .auth-card {
-                                                             max-width: 500px;
-                                                                 }
-                                                                 }
-
-                                                                 /* DESKTOP GRANDE — a partir de 1440px */
-                                                                 @media (min-width: 1440px) {
-                                                                     .auth-card {
-                                                                             max-width: 550px;
-                                                                                 }
-                                                                                 }
-
-                                                                                 /* ============================================
-                                                                                    CELULAR PEQUENO — até 480px (ajustes extras)
-                                                                                       ============================================ */
-                                                                                       @media (max-width: 480px) {
-                                                                                           .auth-container {
-                                                                                                   padding: 16px;
-                                                                                                       }
-
-                                                                                                           .auth-card {
-                                                                                                                   padding: 24px;
-                                                                                                                           border-radius: 6px;
-                                                                                                                               }
-
-                                                                                                                                   .auth-header h2 {
-                                                                                                                                           font-size: 22px;
-                                                                                                                                               }
-
-                                                                                                                                                   .auth-header p {
-                                                                                                                                                           font-size: 13px;
-                                                                                                                                                               }
-
-                                                                                                                                                                   .form-group input {
-                                                                                                                                                                           padding: 12px;
-                                                                                                                                                                                   font-size: 14px;
-                                                                                                                                                                                       }
-
-                                                                                                                                                                                           .btn-block {
-                                                                                                                                                                                                   padding: 12px;
-                                                                                                                                                                                                           font-size: 14px;
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               }
+.voce-badge {
+    font-size: 11px;
+    color: var(--text-dim);
+    font-weight: 600;
+}

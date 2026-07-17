@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Funcionários - Oficina</title>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/dashboard-funcionario.css">
+</head>
+
+<body>
+
+    <nav class="navbar-admin">
+        <div class="nav-container">
+            <span class="logo">Mecânica<span class="badge-admin">CORP</span></span>
+            <div class="nav-links-admin">
+                <a href="dashboard-funcionario.html" class="nav-link">Ordens de Serviço</a>
+                <a href="funcionarios.html" class="nav-link active">Funcionários</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span id="nomeFuncionario">Carregando...</span>
+                    <small id="cargoFuncionario">Acessando...</small>
+                </div>
+                <button id="btnSairAdmin" class="btn-sair">Sair do Sistema</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="page-header">
+            <div>
+                <h2>Gerenciamento de Funcionários</h2>
+                <p>Cadastre, edite e remova os colaboradores com acesso ao sistema.</p>
+            </div>
+            <button class="btn-primary-admin" onclick="window.location.href='cadastro-funcionario.html'">
+                + Cadastrar Funcionário
+            </button>
+        </div>
+
+        <div id="gridFuncionarios" class="grid-funcionarios">
+            <div class="empty-state">Buscando funcionários no sistema...</div>
+        </div>
+    </main>
+
+    <div id="modalEditarFuncionario" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Editar Funcionário</h3>
+                <button id="btnFecharModalEditar" class="btn-close">&times;</button>
+            </div>
+            <form id="formEditarFuncionario" class="modal-form">
+                <input type="hidden" id="editarFuncionarioId">
+                <div class="form-group">
+                    <label for="editarNome">Nome Completo</label>
+                    <input type="text" id="editarNome" required placeholder="Digite o nome completo">
+                </div>
+                <div class="form-group">
+                    <label for="editarEmail">E-mail Corporativo</label>
+                    <input type="email" id="editarEmail" required placeholder="exemplo@oficina.com">
+                </div>
+                <div class="form-group">
+                    <label for="editarCargo">Cargo / Função</label>
+                    <select id="editarCargo" required>
+                        <option value="Mecânico">Mecânico</option>
+                        <option value="Atendente">Atendente</option>
+                        <option value="Administrador">Administrador / Gerente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editarSenha">Nova Senha</label>
+                    <input type="password" id="editarSenha" placeholder="Deixe em branco para manter a senha atual">
+                    <span class="form-hint">Preencha apenas se quiser redefinir a senha deste funcionário.</span>
+                </div>
+                <button type="submit" class="btn-block">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/funcionarios.js"></script>
+</body>
+
+</html>

@@ -1,20 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #121214;
-    color: #e1e1e6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* Estilos específicos das páginas do cliente (Veículos e Chamados).
+   As variáveis, cards-base, botões, badges e modais vêm de theme.css */
 
 /* Navbar */
 .navbar {
-    background-color: #202024;
-    border-bottom: 1px solid #29292e;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
     padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
 }
 
 .nav-container {
@@ -26,25 +21,24 @@ body {
 }
 
 .nav-link {
-    color: #fff;
+    color: var(--text-muted);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     margin-right: 16px;
+    font-size: 14px;
+    transition: color var(--transition);
 }
 
-.nav-link:hover {
-    color: #3ecf8e;
-}
+.nav-link:hover { color: var(--primary-light, var(--primary)); }
 
 .logo {
     font-size: 20px;
     font-weight: 800;
     color: #ffffff;
+    letter-spacing: -0.3px;
 }
 
-.logo span {
-    color: #00b37e;
-}
+.logo span { color: var(--primary); }
 
 .nav-user {
     display: flex;
@@ -52,24 +46,26 @@ body {
     gap: 16px;
 }
 
-.nav-user span {
+.nav-user > span {
     font-weight: 600;
-    color: #e1e1e6;
+    color: var(--text);
+    font-size: 14px;
 }
 
 .btn-sair {
     background: transparent;
-    border: 1px solid #f75a68;
-    color: #f75a68;
-    padding: 6px 12px;
-    border-radius: 4px;
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s;
+    font-size: 13px;
+    transition: all var(--transition);
 }
 
 .btn-sair:hover {
-    background-color: #f75a68;
+    background-color: var(--danger);
     color: #ffffff;
 }
 
@@ -77,246 +73,161 @@ body {
 .main-container {
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 24px;
+    padding: 0 24px 60px;
 }
 
 .page-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
     margin-bottom: 32px;
 }
 
 .page-header h2 {
     font-size: 28px;
     color: #ffffff;
+    letter-spacing: -0.4px;
 }
 
 .page-header p {
-    color: #8d8d99;
+    color: var(--text-muted);
     font-size: 14px;
-}
-
-.btn-primary {
-    background-color: #00b37e;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-primary:hover {
-    background-color: #00875f;
+    margin-top: 6px;
 }
 
 /* Grid de Cards */
 .grid-carros {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
 }
 
+/* Card de veículo */
 .car-card {
-    background-color: #202024;
-    border: 1px solid #29292e;
-    border-radius: 8px;
     padding: 24px;
     display: flex;
     flex-direction: column;
+    gap: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.car-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light, var(--primary)));
+}
+
+.car-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
 }
 
 .car-card h4 {
-    font-size: 20px;
+    font-size: 19px;
     color: #ffffff;
-    border-bottom: 1px solid #29292e;
-    padding-bottom: 8px;
+    font-weight: 700;
 }
 
 .car-info {
-    font-size: 14px;
-    color: #c4c4cc;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
 }
 
 .car-info span {
-    font-weight: bold;
-    color: #e1e1e6;
+    font-weight: 700;
+    color: var(--text);
 }
 
 .car-placa {
-    border: 1px solid #3ecf8e;
-    color: #3ecf8e;
+    border: 1px solid rgba(62, 207, 142, 0.4);
+    background: var(--primary-soft);
+    color: var(--primary-light, var(--primary));
     text-align: center;
-    padding: 8px;
-    border-radius: 6px;
-    font-family: monospace;
-    font-weight: 600;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 4px;
 }
 
-/* Modal */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
+/* Card de chamado */
+.card-carro {
+    padding: 22px 24px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease-in-out;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    border-left: 3px solid var(--admin);
 }
 
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
+.card-carro.status-border-analise { border-left-color: var(--admin); }
+.card-carro.status-border-reparo { border-left-color: var(--info); }
+.card-carro.status-border-finalizado { border-left-color: var(--primary); }
+
+.card-carro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
 }
 
-.modal-card {
-    background-color: #202024;
-    border: 1px solid #29292e;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 450px;
-    padding: 32px;
+.card-carro h3 {
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.35;
 }
 
-.modal-header {
+.card-carro .chamado-veiculo {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.card-carro .chamado-veiculo strong {
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.card-carro .chamado-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.card-carro-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-top: 4px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
 }
 
-.btn-close {
-    background: transparent;
-    border: none;
-    color: #8d8d99;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.form-group input {
-    background-color: #121214;
-    border: 1px solid #29292e;
-    border-radius: 6px;
-    padding: 12px;
-    color: #ffffff;
-    outline: none;
-}
-
-.form-group input:focus {
-    border-color: #00b37e;
-}
-
-.btn-block {
-    background-color: #00b37e;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.status-analise {
-    color: #f5c518;
-    border-color: #f5c518;
-}
-
-.status-reparo {
-    color: #3ea6ff;
-    border-color: #3ea6ff;
-}
-
-.status-finalizado {
-    color: #3ecf8e;
-    border-color: #3ecf8e;
-}
+/* Modal */
+.modal-card { max-width: 460px; }
 
 /* ============================================
-   MOBILE FIRST — este é o padrão que já existe
-      (funciona em qualquer tamanho de tela)
-         ============================================ */
-
-         /* TABLET — telas a partir de 768px (iPads, tablets) */
-         @media (min-width: 768px) {
-             .auth-card {
-                     max-width: 480px;
-                             padding: 48px;
-                                 }
-
-                                     .auth-header h2 {
-                                             font-size: 32px;
-                                                 }
-                                                 }
-
-                                                 /* NOTEBOOK/DESKTOP PEQUENO — a partir de 1024px */
-                                                 @media (min-width: 1024px) {
-                                                     .auth-card {
-                                                             max-width: 500px;
-                                                                 }
-                                                                 }
-
-                                                                 /* DESKTOP GRANDE — a partir de 1440px */
-                                                                 @media (min-width: 1440px) {
-                                                                     .auth-card {
-                                                                             max-width: 550px;
-                                                                                 }
-                                                                                 }
-
-                                                                                 /* ============================================
-                                                                                    CELULAR PEQUENO — até 480px (ajustes extras)
-                                                                                       ============================================ */
-                                                                                       @media (max-width: 480px) {
-                                                                                           .auth-container {
-                                                                                                   padding: 16px;
-                                                                                                       }
-
-                                                                                                           .auth-card {
-                                                                                                                   padding: 24px;
-                                                                                                                           border-radius: 6px;
-                                                                                                                               }
-
-                                                                                                                                   .auth-header h2 {
-                                                                                                                                           font-size: 22px;
-                                                                                                                                               }
-
-                                                                                                                                                   .auth-header p {
-                                                                                                                                                           font-size: 13px;
-                                                                                                                                                               }
-
-                                                                                                                                                                   .form-group input {
-                                                                                                                                                                           padding: 12px;
-                                                                                                                                                                                   font-size: 14px;
-                                                                                                                                                                                       }
-
-                                                                                                                                                                                           .btn-block {
-                                                                                                                                                                                                   padding: 12px;
-                                                                                                                                                                                                           font-size: 14px;
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               }
+   Responsivo
+   ============================================ */
+@media (max-width: 640px) {
+    .main-container { padding: 0 16px 40px; margin: 24px auto; }
+    .page-header { flex-direction: column; align-items: stretch; }
+    .page-header .btn-primary { width: 100%; }
+    .grid-carros { grid-template-columns: 1fr; }
+    .nav-user > span { display: none; }
+}

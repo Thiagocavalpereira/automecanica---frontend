@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Veículos - Oficina</title>
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/veiculos.css">
 </head>
 
@@ -59,6 +60,35 @@
                     <input type="text" id="placa" required placeholder="Ex: ABC1D23" maxlength="7">
                 </div>
                 <button type="submit" class="btn-block">Salvar Veículo</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarCarro" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Editar Veículo</h3>
+                <button id="btnFecharModalEditar" class="btn-close">&times;</button>
+            </div>
+            <form id="formEditarCarro" class="modal-form">
+                <input type="hidden" id="editarVeiculoId">
+                <div class="form-group">
+                    <label for="editarMarca">Marca</label>
+                    <input type="text" id="editarMarca" required placeholder="Ex: Chevrolet, Volkswagen">
+                </div>
+                <div class="form-group">
+                    <label for="editarModelo">Modelo</label>
+                    <input type="text" id="editarModelo" required placeholder="Ex: Onix, Gol">
+                </div>
+                <div class="form-group">
+                    <label for="editarAno">Ano</label>
+                    <input type="number" id="editarAno" required placeholder="Ex: 2022" min="1900" max="2027">
+                </div>
+                <div class="form-group">
+                    <label for="editarPlaca">Placa</label>
+                    <input type="text" id="editarPlaca" required placeholder="Ex: ABC1D23" maxlength="7">
+                </div>
+                <button type="submit" class="btn-block">Salvar Alterações</button>
             </form>
         </div>
     </div>

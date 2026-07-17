@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - Oficina</title>
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/dashboard-funcionario.css">
 </head>
 
@@ -13,6 +14,10 @@
     <nav class="navbar-admin">
         <div class="nav-container">
             <span class="logo">Mecânica<span class="badge-admin">CORP</span></span>
+            <div class="nav-links-admin">
+                <a href="dashboard-funcionario.html" class="nav-link active">Ordens de Serviço</a>
+                <a href="funcionarios.html" id="linkFuncionarios" class="nav-link" style="display: none;">Funcionários</a>
+            </div>
             <div class="nav-user">
                 <div class="user-info">
                     <span id="nomeFuncionario">Carregando...</span>
@@ -46,8 +51,8 @@
                                 <th>Cliente</th>
                                 <th>Veículo</th>
                                 <th>Placa</th>
-                                <th>Funcionário</th>
                                 <th>Status</th>
+                                <th>Funcionário</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -63,26 +68,54 @@
     </main>
 
     <div id="modalFuncionario" class="modal">
-    <div class="modal-content">
+        <div class="modal-content">
 
-        <h3>Atribuir Funcionário</h3>
+            <h3>Atribuir Funcionário</h3>
 
-        <select id="selectFuncionario">
-            <option>Carregando...</option>
-        </select>
+            <select id="selectFuncionario">
+                <option>Carregando...</option>
+            </select>
 
-        <div class="modal-buttons">
-            <button id="btnSalvarFuncionario" class="btn-primary-admin">
-                Salvar
-            </button>
+            <div class="modal-buttons">
+                <button id="btnSalvarFuncionario" class="btn-primary-admin">
+                    Salvar
+                </button>
 
-            <button id="btnCancelarFuncionario" class="btn-action">
-                Cancelar
-            </button>
+                <button id="btnCancelarFuncionario" class="btn-outline">
+                    Cancelar
+                </button>
+            </div>
+
         </div>
-
     </div>
-</div>
+
+    <div id="modalEditarChamado" class="modal">
+        <div class="modal-content">
+
+            <h3>Editar Ordem de Serviço</h3>
+
+            <div class="form-group" style="margin-bottom: 14px;">
+                <label for="editarOsTitulo">Título</label>
+                <input type="text" id="editarOsTitulo" placeholder="Título do chamado">
+            </div>
+
+            <div class="form-group">
+                <label for="editarOsDescricao">Descrição</label>
+                <textarea id="editarOsDescricao" rows="4" placeholder="Descrição do chamado"></textarea>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="btnSalvarEdicaoOs" class="btn-primary-admin">
+                    Salvar
+                </button>
+
+                <button id="btnCancelarEdicaoOs" class="btn-outline">
+                    Cancelar
+                </button>
+            </div>
+
+        </div>
+    </div>
 
     <script src="../js/dashboard-funcionario.js"></script>
 </body>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Chamados - Oficina</title>
+    <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="../css/veiculos.css">
 </head>
 
@@ -57,6 +58,27 @@
                     <textarea id="descricao" rows="4" placeholder="Descreva o problema com mais detalhes"></textarea>
                 </div>
                 <button type="submit" class="btn-block">Abrir Chamado</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarChamado" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Editar Chamado</h3>
+                <button id="btnFecharModalEditar" class="btn-close">&times;</button>
+            </div>
+            <form id="formEditarChamado" class="modal-form">
+                <input type="hidden" id="editarChamadoId">
+                <div class="form-group">
+                    <label for="editarTitulo">Título do Chamado</label>
+                    <input type="text" id="editarTitulo" required placeholder="Ex: Barulho no motor">
+                </div>
+                <div class="form-group">
+                    <label for="editarDescricao">Descrição (opcional)</label>
+                    <textarea id="editarDescricao" rows="4" placeholder="Descreva o problema com mais detalhes"></textarea>
+                </div>
+                <button type="submit" class="btn-block">Salvar Alterações</button>
             </form>
         </div>
     </div>
