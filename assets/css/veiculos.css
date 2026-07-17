@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214;
+    color: #e1e1e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #202024;
+    border-bottom: 1px solid #29292e;
+    padding: 16px 24px;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 16px;
+}
+
+.nav-link:hover {
+    color: #3ecf8e;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00b37e;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-user span {
+    font-weight: 600;
+    color: #e1e1e6;
+}
+
+.btn-sair {
+    background: transparent;
+    border: 1px solid #f75a68;
+    color: #f75a68;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-sair:hover {
+    background-color: #f75a68;
+    color: #ffffff;
+}
+
+/* Conteúdo Principal */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-header h2 {
+    font-size: 28px;
+    color: #ffffff;
+}
+
+.page-header p {
+    color: #8d8d99;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background-color: #00b37e;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #00875f;
+}
+
+/* Grid de Cards */
+.grid-carros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.car-card {
+    background-color: #202024;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.car-card h4 {
+    font-size: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid #29292e;
+    padding-bottom: 8px;
+}
+
+.car-info {
+    font-size: 14px;
+    color: #c4c4cc;
+}
+
+.car-info span {
+    font-weight: bold;
+    color: #e1e1e6;
+}
+
+.car-placa {
+    border: 1px solid #3ecf8e;
+    color: #3ecf8e;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background-color: #202024;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 32px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.btn-close {
+    background: transparent;
+    border: none;
+    color: #8d8d99;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input {
+    background-color: #121214;
+    border: 1px solid #29292e;
+    border-radius: 6px;
+    padding: 12px;
+    color: #ffffff;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #00b37e;
+}
+
+.btn-block {
+    background-color: #00b37e;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.status-analise {
+    color: #f5c518;
+    border-color: #f5c518;
+}
+
+.status-reparo {
+    color: #3ea6ff;
+    border-color: #3ea6ff;
+}
+
+.status-finalizado {
+    color: #3ecf8e;
+    border-color: #3ecf8e;
+}
+
+/* ============================================
+   MOBILE FIRST — este é o padrão que já existe
+      (funciona em qualquer tamanho de tela)
+         ============================================ */
+
+         /* TABLET — telas a partir de 768px (iPads, tablets) */
+         @media (min-width: 768px) {
+             .auth-card {
+                     max-width: 480px;
+                             padding: 48px;
+                                 }
+
+                                     .auth-header h2 {
+                                             font-size: 32px;
+                                                 }
+                                                 }
+
+                                                 /* NOTEBOOK/DESKTOP PEQUENO — a partir de 1024px */
+                                                 @media (min-width: 1024px) {
+                                                     .auth-card {
+                                                             max-width: 500px;
+                                                                 }
+                                                                 }
+
+                                                                 /* DESKTOP GRANDE — a partir de 1440px */
+                                                                 @media (min-width: 1440px) {
+                                                                     .auth-card {
+                                                                             max-width: 550px;
+                                                                                 }
+                                                                                 }
+
+                                                                                 /* ============================================
+                                                                                    CELULAR PEQUENO — até 480px (ajustes extras)
+                                                                                       ============================================ */
+                                                                                       @media (max-width: 480px) {
+                                                                                           .auth-container {
+                                                                                                   padding: 16px;
+                                                                                                       }
+
+                                                                                                           .auth-card {
+                                                                                                                   padding: 24px;
+                                                                                                                           border-radius: 6px;
+                                                                                                                               }
+
+                                                                                                                                   .auth-header h2 {
+                                                                                                                                           font-size: 22px;
+                                                                                                                                               }
+
+                                                                                                                                                   .auth-header p {
+                                                                                                                                                           font-size: 13px;
+                                                                                                                                                               }
+
+                                                                                                                                                                   .form-group input {
+                                                                                                                                                                           padding: 12px;
+                                                                                                                                                                                   font-size: 14px;
+                                                                                                                                                                                       }
+
+                                                                                                                                                                                           .btn-block {
+                                                                                                                                                                                                   padding: 12px;
+                                                                                                                                                                                                           font-size: 14px;
+                                                                                                                                                                                                               }
+                                                                                                                                                                                                               }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Chamados - Oficina</title>
+    <link rel="stylesheet" href="../css/veiculos.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Mecânica<span>PRO</span></span>
+            <div class="nav-user">
+                <a href="veiculos.html" class="nav-link">Meus Veículos</a>
+                <span id="nomeCliente">Carregando...</span>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="page-header">
+            <div>
+                <h2>Meus Chamados</h2>
+                <p>Acompanhe o status das ordens de serviço dos seus veículos.</p>
+            </div>
+            <button id="btnAbrirModal" class="btn-primary">+ Abrir Chamado</button>
+        </div>
+
+        <div id="gridChamados" class="grid-carros">
+            <div class="loading">Buscando seus chamados no sistema...</div>
+        </div>
+    </main>
+
+    <div id="modalChamado" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Abrir Novo Chamado</h3>
+                <button id="btnFecharModal" class="btn-close">&times;</button>
+            </div>
+            <form id="formAbrirChamado" class="modal-form">
+                <div class="form-group">
+                    <label for="veiculoSelect">Veículo</label>
+                    <select id="veiculoSelect" required>
+                        <option value="">Carregando veículos...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Título do Chamado</label>
+                    <input type="text" id="titulo" required placeholder="Ex: Barulho no motor">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição (opcional)</label>
+                    <textarea id="descricao" rows="4" placeholder="Descreva o problema com mais detalhes"></textarea>
+                </div>
+                <button type="submit" class="btn-block">Abrir Chamado</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/chamados.js"></script>
+</body>
+
+</html>

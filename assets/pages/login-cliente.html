@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Oficina Mecânica</title>
+    <link rel="stylesheet" href="../css/login-cliente.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Acessar Conta</h2>
+                <p>Insira suas credenciais para entrar no painel do cliente.</p>
+            </div>
+
+            <form id="formLoginCliente" class="auth-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" required placeholder="seu.email@exemplo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required placeholder="Digite sua senha">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Não tem uma conta? <a href="cadastro-cliente.html">Cadastrar-se</a></p>
+                <p><a href="../../index.html" class="back-link">← Voltar para a Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/login-cliente.js"></script>
+</body>
+
+</html>

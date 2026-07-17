@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados para conserto automotivo</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo"><span>Chamados para conserto automotivo</span></div>
+            <nav class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+                <button onclick="redirecionar('login-cliente')" class="btn btn-outline">Login Cliente</button>
+                <button onclick="redirecionar('cadastro-cliente')" class="btn btn-primary">Cadastrar-se</button>
+                <button onclick="redirecionar('login-funcionario')" class="btn btn-accent">Portal Funcionário</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Seu radar de socorro para seu veiculo</h1>
+            <p>Alta tecnologia, transparência e agilidade no cuidado com o seu veículo. Solicite serviços em um só lugar.</p>
+            <div class="hero-actions">
+                <button onclick="redirecionar('cadastro-cliente')" class="btn btn-lg btn-primary">Começar Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section id="sobre" class="features-grid">
+            <div class="feature-card">
+                <h2>Sobre a Empresa</h2>
+                <p>Somos uma plataforma que conecta motoristas que estão com problemas no seu veiculo às oficinas mecânicas
+                 e guinchos mais próximos. Simplificamos o socorro automotivo para o cliente
+                  voltar a rodar em segurança, sem estresse.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Serviço de Guincho 24h</h2>
+                <p>Dispomos de um radar inteligente de guinchos parceiros para atendimento rápido e suporte emergencial.
+                 Conectamos os motoristas aos guinchos mais próximos em tempo real, garantindo agilidade no resgate e total
+                 segurança no transporte do seu veículo.</p>
+            </div>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <h2>Informações de Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Telefone</h3>
+                    <p>(11) 99999-9999</p>
+                </div>
+                <div class="contact-item">
+                    <h3>E-mail</h3>
+                    <p>atendimento@oficinasSO.com</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Chamados para conserto automotivo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Veículos - Oficina</title>
+    <link rel="stylesheet" href="../css/veiculos.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Mecânica<span>PRO</span></span>
+            <div class="nav-user">
+                <a href="chamados.html" class="nav-link">Meus Chamados</a>
+                <span id="nomeCliente">Carregando...</span>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="page-header">
+            <div>
+                <h2>Meus Veículos</h2>
+                <p>Gerencie os carros cadastrados na nossa oficina.</p>
+            </div>
+            <button id="btnAbrirModal" class="btn-primary">+ Cadastrar Veiculos</button>
+        </div>
+
+        <div id="gridCarros" class="grid-carros">
+            <div class="loading">Buscando seus veículos no sistema...</div>
+        </div>
+    </main>
+
+    <div id="modalCarro" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Cadastrar Novo Veículo</h3>
+                <button id="btnFecharModal" class="btn-close">&times;</button>
+            </div>
+            <form id="formCadastroCarro" class="modal-form">
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca" required placeholder="Ex: Chevrolet, Volkswagen">
+                </div>
+                <div class="form-group">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" id="modelo" required placeholder="Ex: Onix, Gol">
+                </div>
+                <div class="form-group">
+                    <label for="ano">Ano</label>
+                    <input type="number" id="ano" required placeholder="Ex: 2022" min="1900" max="2027">
+                </div>
+                <div class="form-group">
+                    <label for="placa">Placa</label>
+                    <input type="text" id="placa" required placeholder="Ex: ABC1D23" maxlength="7">
+                </div>
+                <button type="submit" class="btn-block">Salvar Veículo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/veiculos.js"></script>
+</body>
+
+</html>

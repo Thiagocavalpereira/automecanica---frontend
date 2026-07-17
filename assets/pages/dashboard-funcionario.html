@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Oficina</title>
+    <link rel="stylesheet" href="../css/dashboard-funcionario.css">
+</head>
+
+<body>
+
+    <nav class="navbar-admin">
+        <div class="nav-container">
+            <span class="logo">Mecânica<span class="badge-admin">CORP</span></span>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span id="nomeFuncionario">Carregando...</span>
+                    <small id="cargoFuncionario">Acessando...</small>
+                </div>
+                <button id="btnSairAdmin" class="btn-sair">Sair do Sistema</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <div class="page-header">
+            <div>
+                <h2>Gerenciamento de Ordens de Serviço</h2>
+                <p>Monitore e atualize as ordens de manutenção da oficina em tempo real.</p>
+            </div>
+            <button id="btnCadastrarFuncionario" class="btn-primary-admin" style="display: none;"
+                onclick="window.location.href='cadastro-funcionario.html'">
+                + Cadastrar Funcionário
+            </button>
+        </div>
+
+        <section class="dashboard-content">
+            <div class="table-card">
+                <h3>Serviços Ativos</h3>
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ordem de Serviço</th>
+                                <th>Cliente</th>
+                                <th>Veículo</th>
+                                <th>Placa</th>
+                                <th>Funcionário</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaOrdensServico">
+                            <tr>
+                                <td colspan="7" class="table-loading">Buscando dados no servidor...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalFuncionario" class="modal">
+    <div class="modal-content">
+
+        <h3>Atribuir Funcionário</h3>
+
+        <select id="selectFuncionario">
+            <option>Carregando...</option>
+        </select>
+
+        <div class="modal-buttons">
+            <button id="btnSalvarFuncionario" class="btn-primary-admin">
+                Salvar
+            </button>
+
+            <button id="btnCancelarFuncionario" class="btn-action">
+                Cancelar
+            </button>
+        </div>
+
+    </div>
+</div>
+
+    <script src="../js/dashboard-funcionario.js"></script>
+</body>
+
+</html>

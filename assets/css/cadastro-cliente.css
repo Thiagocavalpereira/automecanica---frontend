@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214;
+    overflow-x: hidden; 
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; 
+    background-color: #121214;
+}
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #121214;
+}
+
+.auth-card {
+    background-color: #202024;
+    border: 1px solid #29292e;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-family: sans-serif;
+}
+
+.auth-header p {
+    color: #8d8d99;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e1e1e6;
+    font-family: sans-serif;
+}
+
+.form-group input {
+    background-color: #121214;
+    border: 1px solid #29292e;
+    border-radius: 6px;
+    padding: 14px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #00b37e;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: #00b37e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-block:hover {
+    background-color: #00875f;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.auth-footer p {
+    color: #8d8d99;
+}
+
+.auth-footer a {
+    color: #00b37e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    color: #00875f;
+}
+
+.auth-footer .back-link {
+    color: #8d8d99;
+    font-weight: 400;
+}
+
+.auth-footer .back-link:hover {
+    color: #e1e1e6;
+}
+
+/* ============================================
+   MOBILE FIRST — este é o padrão que já existe
+      (funciona em qualquer tamanho de tela)
+         ============================================ */
+
+         /* TABLET — telas a partir de 768px (iPads, tablets) */
+         @media (min-width: 768px) {
+             .auth-card {
+                     max-width: 480px;
+                             padding: 48px;
+                                 }
+
+                                     .auth-header h2 {
+                                             font-size: 32px;
+                                                 }
+                                                 }
+
+                                                 /* NOTEBOOK/DESKTOP PEQUENO — a partir de 1024px */
+                                                 @media (min-width: 1024px) {
+                                                     .auth-card {
+                                                             max-width: 500px;
+                                                                 }
+                                                                 }
+
+                                                                 /* DESKTOP GRANDE — a partir de 1440px */
+                                                                 @media (min-width: 1440px) {
+                                                                     .auth-card {
+                                                                             max-width: 550px;
+                                                                                 }
+                                                                                 }
+
+                                                                                 /* ============================================
+                                                                                    CELULAR PEQUENO — até 480px (ajustes extras)
+                                                                                       ============================================ */
+                                                                                       @media (max-width: 480px) {
+                                                                                           .auth-container {
+                                                                                                   padding: 16px;
+                                                                                                       }
+
+                                                                                                           .auth-card {
+                                                                                                                   padding: 24px;
+                                                                                                                           border-radius: 6px;
+                                                                                                                               }
+
+                                                                                                                                   .auth-header h2 {
+                                                                                                                                           font-size: 22px;
+                                                                                                                                               }
+
+                                                                                                                                                   .auth-header p {
+                                                                                                                                                           font-size: 13px;
+                                                                                                                                                               }
+
+                                                                                                                                                                   .form-group input {
+                                                                                                                                                                           padding: 12px;
+                                                                                                                                                                                   font-size: 14px;
+                                                                                                                                                                                       }
+
+                                                                                                                                                                                           .btn-block {
+                                                                                                                                                                                                   padding: 12px;
+                                                                                                                                                                                                           font-size: 14px;
+                                                                                                                                                                                                               }
+                                                                                                                                                                                                               }/* ============================================
+                                                                                                                                                                                                                  MOBILE FIRST — este é o padrão que já existe
+                                                                                                                                                                                                                     (funciona em qualquer tamanho de tela)
+                                                                                                                                                                                                                        ============================================ */
+
+                                                                                                                                                                                                                        /* TABLET — telas a partir de 768px (iPads, tablets) */
+                                                                                                                                                                                                                        @media (min-width: 768px) {
+                                                                                                                                                                                                                            .auth-card {
+                                                                                                                                                                                                                                    max-width: 480px;
+                                                                                                                                                                                                                                            padding: 48px;
+                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                    .auth-header h2 {
+                                                                                                                                                                                                                                                            font-size: 32px;
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                /* NOTEBOOK/DESKTOP PEQUENO — a partir de 1024px */
+                                                                                                                                                                                                                                                                @media (min-width: 1024px) {
+                                                                                                                                                                                                                                                                    .auth-card {
+                                                                                                                                                                                                                                                                            max-width: 500px;
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                /* DESKTOP GRANDE — a partir de 1440px */
+                                                                                                                                                                                                                                                                                @media (min-width: 1440px) {
+                                                                                                                                                                                                                                                                                    .auth-card {
+                                                                                                                                                                                                                                                                                            max-width: 550px;
+                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                                                                                                /* ============================================
+                                                                                                                                                                                                                                                                                                   CELULAR PEQUENO — até 480px (ajustes extras)
+                                                                                                                                                                                                                                                                                                      ============================================ */
+                                                                                                                                                                                                                                                                                                      @media (max-width: 480px) {
+                                                                                                                                                                                                                                                                                                          .auth-container {
+                                                                                                                                                                                                                                                                                                                  padding: 16px;
+                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                          .auth-card {
+                                                                                                                                                                                                                                                                                                                                  padding: 24px;
+                                                                                                                                                                                                                                                                                                                                          border-radius: 6px;
+                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                  .auth-header h2 {
+                                                                                                                                                                                                                                                                                                                                                          font-size: 22px;
+                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                  .auth-header p {
+                                                                                                                                                                                                                                                                                                                                                                          font-size: 13px;
+                                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                                  .form-group input {
+                                                                                                                                                                                                                                                                                                                                                                                          padding: 12px;
+                                                                                                                                                                                                                                                                                                                                                                                                  font-size: 14px;
+                                                                                                                                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                                                                                                                                          .btn-block {
+                                                                                                                                                                                                                                                                                                                                                                                                                  padding: 12px;
+                                                                                                                                                                                                                                                                                                                                                                                                                          font-size: 14px;
+                                                                                                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                                                                                              }

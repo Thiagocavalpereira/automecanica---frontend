@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Funcionário - Oficina</title>
+    <link rel="stylesheet" href="../css/login-funcionario.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Portal do Funcionário</h2>
+                <p>Insira suas credenciais administrativas para acessar o sistema.</p>
+            </div>
+
+            <form id="formLoginFuncionario" class="auth-form">
+                <div class="form-group">
+                    <label for="email">E-mail Corporativo</label>
+                    <input type="email" id="email" required placeholder="nome.sobrenome@oficina.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required placeholder="Digite sua senha">
+                </div>
+
+                <button type="submit" class="btn-block">Acessar Painel</button>
+            </form>
+
+            <div class="auth-footer">
+                <p><a href="../../index.html" class="back-link">← Voltar para a Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/login-funcionario.js"></script>
+</body>
+
+</html>

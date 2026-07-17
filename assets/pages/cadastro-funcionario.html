@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Colaborador - Administração</title>
+    <link rel="stylesheet" href="../css/cadastro-funcionario.css">
+</head>
+
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>Cadastrar Funcionário</h2>
+                <p>Adicione um novo membro à equipe da oficina.</p>
+            </div>
+
+            <form id="formCadastroFuncionario" class="auth-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" required placeholder="Digite o nome completo">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail Corporativo</label>
+                    <input type="email" id="email" required placeholder="exemplo@oficina.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo">Cargo / Função</label>
+                    <select id="cargo" required>
+                        <option value="" disabled selected>Selecione uma função</option>
+                        <option value="Mecânico">Mecânico</option>
+                        <option value="Atendente">Atendente</option>
+                        <option value="Administrador">Administrador / Gerente</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha Inicial</label>
+                    <input type="password" id="senha" required placeholder="Crie uma senha temporária">
+                </div>
+
+                <button type="submit" class="btn-block">Registrar Funcionário</button>
+            </form>
+
+            <div class="auth-footer">
+                <p><a href="dashboard-funcionario.html" class="back-link">← Voltar para o Painel</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/cadastro-funcionario.js"></script>
+</body>
+
+</html>
